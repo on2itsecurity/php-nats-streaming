@@ -1,5 +1,5 @@
 {
-  "name": "byrnedo/php-nats-streaming",
+  "name": "on2itsecurity/php-nats-streaming",
   "license": "MIT",
   "description": "PHP Client for nats-streaming-server.",
   "type": "library",
