@@ -1,5 +1,7 @@
 # PHP Nats Streaming Server Client
 
+(Forked from [byrnedo/php-nats-streaming](https://github.com/byrnedo/php-nats-streaming) to try to fix the notices in the abandoned [phpnats](https://github.com/repejota/phpnats) project)
+
 ## Build
 
 | Master  | Develop |
