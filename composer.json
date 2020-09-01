@@ -5,7 +5,7 @@
   "type": "library",
   "require": {
     "protobuf-php/protobuf": "^0.1.3",
-    "repejota/nats": "dev-develop#bd089ea66ef41f557830449872389750dd12a99f@dev"
+    "repejota/nats": "^0.8.7.1"
   },
   "require-dev": {
     "protobuf-php/protobuf-plugin": "^0.1.2",
@@ -27,7 +27,10 @@
           "reference": "origin/master"
         }
       }
-
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/on2itsecurity/phpnats"
     }
   ],
   "autoload": {
