@@ -6,4 +6,5 @@
 
 /.protocol-mod.proto
 
+/composer.lock
 /composer.phar
