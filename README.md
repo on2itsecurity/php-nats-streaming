@@ -1,5 +1,7 @@
 # PHP Nats Streaming Server Client
 
+(Forked from [byrnedo/php-nats-streaming](https://github.com/byrnedo/php-nats-streaming) to try to fix the notices in the abandoned [phpnats](https://github.com/repejota/phpnats) project)
+
 ## Build
 
 | Master  | Develop |
@@ -35,10 +37,24 @@ Get [composer](https://getcomposer.org/):
 curl -O http://getcomposer.org/composer.phar && chmod +x composer.phar
 ```
 
+Add the ON2IT forks to your `composer.json` repositories:
+```json
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/on2itsecurity/php-nats-streaming"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/on2itsecurity/phpnats"
+        }
+    ]
+```
+
 Add php-nats-streaming as a dependency to your project
 
 ```bash
-php composer.phar require 'byrnedo/php-nats-streaming:^0.2.4'
+php composer.phar require 'byrnedo/php-nats-streaming:^0.2.4.1'
 ```
 
 ## Usage
