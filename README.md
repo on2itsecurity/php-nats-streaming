@@ -37,6 +37,20 @@ Get [composer](https://getcomposer.org/):
 curl -O http://getcomposer.org/composer.phar && chmod +x composer.phar
 ```
 
+Add the ON2IT forks to your `composer.json` repositories:
+```json
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/on2itsecurity/php-nats-streaming"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/on2itsecurity/phpnats"
+        }
+    ]
+```
+
 Add php-nats-streaming as a dependency to your project
 
 ```bash
