@@ -447,11 +447,15 @@ class Connection
     }
 
     /**
-     *
      * Disconnect if we haven't
      */
     public function __destruct()
     {
+        // When explicit close is configured, do not close anything implicitly here in the destructor
+        if ($this->options->getExplicitClose()) {
+            return;
+        }
+
         if ($this->isConnected()) {
             $this->close();
         }

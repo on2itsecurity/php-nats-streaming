@@ -34,6 +34,11 @@ class ConnectionOptions
     private $clientID = '';
 
     /**
+     * @var boolean
+     */
+    private $explicitClose = false;
+
+    /**
      * Allows to define parameters which can be set by passing them to the class constructor.
      *
      * @var array
@@ -45,6 +50,7 @@ class ConnectionOptions
         'natsOptions',
         'clientID',
         'clusterID',
+        'explicitClose',
     ];
 
 
@@ -138,5 +144,23 @@ class ConnectionOptions
     public function getClientID()
     {
         return $this->clientID;
+    }
+
+    /**
+     * @param bool $explicitClose
+     * @return ConnectionOptions
+     */
+    public function setExplicitClose($explicitClose)
+    {
+        $this->explicitClose = $explicitClose;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getExplicitClose()
+    {
+        return $this->explicitClose;
     }
 }
