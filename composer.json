@@ -11,7 +11,7 @@
     "protobuf-php/protobuf-plugin": "^0.1.2",
     "symfony/console": "^2.8@dev",
     "phpunit/phpunit": "5.3.*",
-    "satooshi/php-coveralls": "dev-master",
+    "satooshi/php-coveralls": "^1.0",
     "squizlabs/php_codesniffer": "~2.0",
     "github.com/gogo/protobuf": "dev-master"
   },
