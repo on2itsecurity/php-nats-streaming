@@ -27,7 +27,6 @@ Uses [phpnats](https://github.com/repejota/phpnats) under the hood and closesly 
 ## Requirements
 
 * php 5.6+
-* [stan](https://github.com/nats-io/nats-streaming-server)
 
 
 ## Installation
@@ -37,7 +36,7 @@ Get [composer](https://getcomposer.org/):
 curl -O http://getcomposer.org/composer.phar && chmod +x composer.phar
 ```
 
-Add the ON2IT forks to your `composer.json` repositories:
+Add the ON2IT forks to the `repositories` array in your `composer.json`:
 ```json
     "repositories": [
         {
@@ -54,7 +53,7 @@ Add the ON2IT forks to your `composer.json` repositories:
 Add php-nats-streaming as a dependency to your project
 
 ```bash
-php composer.phar require 'byrnedo/php-nats-streaming:^0.2.4.1'
+php composer.phar require 'byrnedo/php-nats-streaming:^0.2.4.2'
 ```
 
 ## Usage
@@ -76,9 +75,6 @@ $gotAck = $r->wait();
 if (!$gotAck) {
     ...
 }
-
-$c->close();
-
 ```
 
 #### Note
@@ -126,9 +122,6 @@ $sub->wait(1);
 
 // not explicitly needed
 $sub->unsubscribe(); // or $sub->close();
-
-$c->close();
-
 ```
 
 If you want to subscribe to multiple channels you can use `$c->wait()`:
@@ -167,9 +160,6 @@ $sub->wait(1);
 
 // not explicitly needed
 $sub->close(); // or $sub->unsubscribe();
-
-$c->close();
-
 ```
 
 ### Manual Ack
@@ -188,9 +178,22 @@ $sub = $c->subscribe('special.subject', function ($message) {
 }, $subOptions);
 
 $sub->wait(1);
+```
 
+### Explicit Close
+
+This library automatically closes the NATS Streaming connection during deconstruction of the `Connection` object. This is probably unwanted behavior in long-running processes, therefore, it is possible to configure you are explicitly closing the connection by yourself.
+
+```php
+$options = new \NatsStreaming\ConnectionOptions([
+    'explicitClose' => true,
+]);
+$c = new \NatsStreaming\Connection($options);
+
+$c->connect();
+
+// Do stuff with $c, but be sure to explicitly close the conncetion manually
 $c->close();
-
 ```
 
 ## License
