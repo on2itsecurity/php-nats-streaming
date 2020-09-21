@@ -53,7 +53,7 @@ Add the ON2IT forks to the `repositories` array in your `composer.json`:
 Add php-nats-streaming as a dependency to your project
 
 ```bash
-php composer.phar require 'byrnedo/php-nats-streaming:^0.2.4.1'
+php composer.phar require 'byrnedo/php-nats-streaming:^0.2.4.2'
 ```
 
 ## Usage
